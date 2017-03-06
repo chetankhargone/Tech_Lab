@@ -1,2 +1,2 @@
 # Tech_Lab
-A repository for experimental apps using various technologies 
+This branch of the repository contains the code-snippet illustrating the difference between Interface and Abstract class. :)

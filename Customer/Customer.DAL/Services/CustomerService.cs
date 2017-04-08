@@ -1,4 +1,4 @@
-﻿namespace Customer.DAL.Services
+﻿namespace ECommerce.DAL.Services
 {
     using Contracts.Services;
     using System;
@@ -7,32 +7,78 @@
     using System.Text;
     using System.Threading.Tasks;
     using DTO.Customer;
-
+    using Mapper;
+    using EF.Repository;
     public class CustomerService : ICustomerService
     {
-        public int AddCustomer(CustomerTO customer)
+        private readonly CustomerRepository _custRepository;
+        private AppMapper _appMapper;
+        public CustomerService(CustomerRepository custRepository,AppMapper mapper)
         {
-            throw new NotImplementedException();
+            _custRepository = custRepository;
+            _appMapper = mapper;
+        }
+        public bool AddCustomer(CustomerTO customer)
+        {
+            try
+            {
+                var custEntity = _appMapper.Map(customer);
+                _custRepository.Add(custEntity);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public bool DeletCustomer(int customerId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity =_custRepository.GetQuery().Where(x => x.Id == customerId).FirstOrDefault();
+                _custRepository.Delete(entity);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public CustomerTO GetCustomer(int customerId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = _custRepository.GetQuery().Where(x => x.Id == customerId).FirstOrDefault();
+                var customer = _appMapper.Map(entity);
+                return customer;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public IEnumerable<CustomerTO> GetCustomers()
         {
-            throw new NotImplementedException();
+            var entitiy = _custRepository.GetAll();
+            var customers = _appMapper.Map(entitiy);
+            return customers;
         }
 
         public bool UpdateCustomer(CustomerTO customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entitiy = _appMapper.Map(customer);
+                _custRepository.Update(entitiy);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Customer.Repository
+namespace ECommerce.Repository
 {
     public interface IRepository<T> : IDisposable where T : class
     {
-        T Add(T entity);
+        void Add(T entity);
         IEnumerable<T> GetAll();
         IQueryable<T> GetQuery();
-        bool Update(T entity);
-        bool Delete(T entity);
+        void Update(T entity);
+        void Delete(T entity);
         void SaveChanges();
     }
 }

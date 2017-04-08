@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Customer.Domain.Master
+namespace ECommerce.Domain.Master
 {
     public class CustomerType : BaseDomain<int>
     {

@@ -1,4 +1,4 @@
-﻿namespace Customer.DTO.Customer
+﻿namespace ECommerce.DTO.Customer
 {
     using Order;
     using System;

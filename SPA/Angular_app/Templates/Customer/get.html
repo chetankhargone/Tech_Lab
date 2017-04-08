@@ -1,0 +1,25 @@
+﻿<div>
+    <h1>
+        Our Customers
+    </h1>
+
+    <ul>
+        <li ng-repeat="customer in customers">
+            <div class="col-md-2">
+                {{customer.Name}}
+            </div>
+            <div>
+                {{customer.Email}}
+            </div>
+            <div>
+                {{customer.Password}}
+            </div>
+            <div>
+                {{customer.Country}}
+            </div>
+            <div>
+                <input type="button" class="btn btn-info"  value="Update Details"/>
+            </div>
+        </li>
+    </ul>
+</div>

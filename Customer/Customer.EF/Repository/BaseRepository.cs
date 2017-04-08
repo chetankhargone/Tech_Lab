@@ -1,7 +1,7 @@
-﻿namespace Customer.EF.Repository
+﻿namespace ECommerce.EF.Repository
 {
-    using Customer.Repository;
-    using Customer.Repository.Transaction;
+    using ECommerce.Repository;
+    using ECommerce.Repository.Transaction;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -11,14 +11,28 @@
     public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         private readonly IDataContext _context;
+        protected IDataContext Context
+        {
+            get
+            {
+                return _context;
+            }
+        }
+        public BaseRepository(IDataContext context)
+        {
+            _context = context;
+        }
 
-        public abstract T Add(T entity);
-        public abstract bool Delete(T entity);
+        public abstract void Add(T entity);
+        public abstract void Delete(T entity);
         public abstract IEnumerable<T> GetAll();
         public abstract IQueryable<T> GetQuery();
-        public abstract void SaveChanges();
-        public abstract bool Update(T entity);
+        public abstract void Update(T entity);
 
+        public  void SaveChanges()
+        {
+            _context.Commit();
+        }
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 

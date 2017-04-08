@@ -1,11 +1,11 @@
-﻿using Customer.Domain.Master;
+﻿using ECommerce.Domain.Master;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Customer.Domain
+namespace ECommerce.Domain
 {
     public class Order : BaseDomain<int>
     {

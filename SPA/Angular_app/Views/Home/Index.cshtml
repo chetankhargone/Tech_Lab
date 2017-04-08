@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome to Angular 1.x world</title>
+    <base href="/" />
+    <!--css-->
+    <link href="~/Content/Css/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="~/Content/Css/site.css" rel="stylesheet" />
+
+</head>
+<body ng-app="CustomerApp">
+    <div class="container">
+        
+        <div ng-view>
+            <!--ng templates data-->
+        </div>
+    </div>
+    <!--js-->
+    <script src="~/Content/JavaScript/Angular/lib/angular.js"></script>
+    <script src="~/Content/JavaScript/Angular/lib/angular-route.min.js"></script>
+
+    <script src="~/Content/JavaScript/Angular/base.js"></script>
+    <script src="~/Content/JavaScript/Angular/build/ng-routes.js"></script>
+    <script src="~/Content/JavaScript/Angular/build/ng-filters.js"></script>
+    <script src="~/Content/JavaScript/Angular/build/ng-ctrls.js"></script>
+    <script src="~/Content/JavaScript/Angular/build/ng-services.js"></script>
+</body>
+</html>

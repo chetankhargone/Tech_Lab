@@ -1,6 +1,6 @@
-﻿namespace Customer.Contracts.Services
+﻿namespace ECommerce.Contracts.Services
 {
-    using Customer.DTO.Customer;
+    using ECommerce.DTO.Customer;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,7 +10,7 @@
     public interface ICustomerService
     {
         //C -create
-        int AddCustomer(CustomerTO customer);
+        bool AddCustomer(CustomerTO customer);
         //R -read
         IEnumerable<CustomerTO> GetCustomers();
         CustomerTO GetCustomer(int customerId);

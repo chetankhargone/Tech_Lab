@@ -1,0 +1,47 @@
+﻿<div class="caption">
+    <h1>
+        Enter the following details to add customer
+    </h1>
+
+    <form class="col-md-6">
+        <div class="form-group">
+            <label for="email">Customer Name:</label>
+            <input type="text" name="cust.CustName" class="form-control" placeholder="Enter customer name" required />
+        </div>
+        <div class="form-group">
+            <label for="pwd">Customer Email:</label>
+            <input type="email" name="cust.CustEmail" class="form-control" placeholder="Enter customer name" required />
+        </div>
+        <div class="form-group">
+            <label for="pwd">Customer Password:</label>
+            <input type="password" name="cust.CustPassword" class="form-control" placeholder="Enter customer name" required />
+        </div>
+        <div class="form-group">
+            <label for="pwd">
+                Select Products
+              </label>
+                <div class="checkbox">
+                    <label><input  type="checkbox" value="">Mobile</label>
+                </div>
+                <div class="checkbox">
+                    <label><input  type="checkbox" value="">Automobile</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" value="">Grocery</label>
+                </div>
+</div>
+        <div class="form-group">
+            <label for="pwd">
+                Customer Country
+            </label>
+                <select class="form-control">
+                    <option value="0">Select Country </option>
+                    <option value="1">India </option>
+                    <option value="2">USA </option>
+                </select>
+</div>
+        <div class="form-group">
+            <input type="button" class="btn btn-primary" value="Add Customer" ng-click="addCustomer(cust)" />
+        </div>
+    </form>
+</div>

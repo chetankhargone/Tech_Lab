@@ -1,4 +1,4 @@
-﻿namespace Customer.DTO.Order
+﻿namespace ECommerce.DTO.Order
 {
     using System;
     using System.Collections.Generic;

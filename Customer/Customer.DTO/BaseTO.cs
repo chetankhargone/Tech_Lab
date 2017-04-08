@@ -1,4 +1,4 @@
-﻿namespace Customer.DTO
+﻿namespace ECommerce.DTO
 {
     using System;
     using System.Collections.Generic;
